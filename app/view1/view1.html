@@ -1,1 +1,12 @@
 <p>This is the partial for view 1.</p>
+<div class="container" ng-controller="View1Ctrl" >
+    <ul ng-repeat="photo in photos">
+        <li>
+            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg">
+            {{photo.owner}}
+
+            {{photo.title}}
+        </li>
+    </ul>
+
+</div>
