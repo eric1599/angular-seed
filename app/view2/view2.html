@@ -3,3 +3,15 @@
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p>
+<div class="container" ng-controller="View2Ctrl" >
+    <ul ng-repeat="photo in photos">
+      <li>
+        <div class="fkrimg">
+          <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg">
+                    {{photo.owner}}
+                          {{photo.title}}
+
+        </div>
+      </li>
+    </ul>
+</div>

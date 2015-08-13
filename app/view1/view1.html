@@ -1,12 +1,16 @@
 <p>This is the partial for view 1.</p>
 <div class="container" ng-controller="View1Ctrl" >
-    <ul ng-repeat="photo in photos">
+    <div infinite-scroll="flickr.nextPage()" infinite-scroll-disabled='flickr.busy' infinite-scroll-distance='1'>
+    <ul ng-repeat="photo in flickr.items">
         <li>
-            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg">
-            {{photo.owner}}
-
-            {{photo.title}}
+            <div class="fkrimg">
+                <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg">
+<!--                {{photo.owner}}
+                {{photo.title}}
+-->
+            </div>
         </li>
     </ul>
-
+    <div ng-show="flickr.busy">Loading data...</div>
+</div>
 </div>
